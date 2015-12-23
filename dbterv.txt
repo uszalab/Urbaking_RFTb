@@ -1,5 +1,0 @@
-DB:
-
-felhasznalok (id, nev, jelszo, email, telefon)
-termekek (id, nev, tipus, leiras, ar, darabszam)
-vasarlasok (id, user, termek, darab, datum)
