@@ -13,4 +13,7 @@ if (mysqli_connect_errno($kapcsolat))
    echo "Hiba a kapcsolódáskor: " . mysqli_connect_error();
 }
 
+// Jöhet az oldal tetejére a menü
+include "menu.php";
+
 ?>
