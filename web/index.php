@@ -1,24 +1,31 @@
-<?php
-// RFT beadandó
+ï»¿<?php
+// RFT beadandÃ³
 // Alper061
-// INdex, fõoldal
-
-// A fõ fájl, ami kezeli az adatbázist, meg a menüt
+// INdex, fÅ‘oldal
+error_reporting(0);
+// A fÅ‘ fÃ¡jl, ami kezeli az adatbÃ¡zist, meg a menÃ¼t
 include "main.php";
-
-print "<h2>Fõoldal</h2><br>";
+include "bootstrap.php";
+echo '
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Belepes</title>
+    <link rel="stylesheet" type="text/css" href="kinezet.css"/>
+</head>';
+print "<h2>FÅ‘oldal</h2><br>";
 
 if (bejelentkezve())
 {
 $nev =$_SESSION["nev"];
-print "Üdvözöllek a webshop-ban, $nev!<br>Válassz a menüpontok közül!<br><br>Sikeres vásárlást kívánunk!";
+print "ÃœdvÃ¶zÃ¶llek a webshop-ban, $nev!<br>VÃ¡lassz a menÃ¼pontok kÃ¶zÃ¼l!<br><br>Sikeres vÃ¡sÃ¡rlÃ¡st kÃ­vÃ¡nunk!";
 }
 else
 {
-print "Kedves látogató! Az oldal regisztrációköteles, ezért kérlek kattints a regisztrációra, és regisztrálj. Ezek után bejelentkezve (bejelentkezés menüpont) megkezdheted a vásárlást!";
+print "Kedves lÃ¡togatÃ³! Az oldal regisztrÃ¡ciÃ³kÃ¶teles, ezÃ©rt kÃ©rlek kattints a regisztrÃ¡ciÃ³ra, Ã©s regisztrÃ¡lj. Ezek utÃ¡n bejelentkezve (bejelentkezÃ©s menÃ¼pont) megkezdheted a vÃ¡sÃ¡rlÃ¡st!";
 }
 
-// A végén bezárjuk a kapcsolatot
+// A vÃ©gÃ©n bezÃ¡rjuk a kapcsolatot
 mysqli_close($kapcsolat);
 
 // Copyright
