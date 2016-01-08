@@ -1,12 +1,9 @@
 ﻿<?php 
 session_start();
 
-require_once "db.php"; 
-$dbname="rft"; 
-$con=connect("root","");
-mysqli_select_db($con, $dbname);
+include "main.php"; 
 
-$query = mysqli_query($con,"SELECT * FROM felhasznalok");
+$query = mysqli_query($kapcsolat, "SELECT * FROM felhasznalok");
 $adat = mysqli_fetch_assoc($query);
 
 $nev = $_SESSION["nev"];
@@ -19,11 +16,11 @@ $telefon = $_SESSION["telefon"];
 $szetszed = explode("@", $email);
 $valos_email = $szetszed[1];
 
-$query1 = mysqli_query($con,"SELECT * FROM felhasznalok WHERE nev='$nev'");
+$query1 = mysqli_query($kapcsolat, "SELECT * FROM felhasznalok WHERE nev='$nev'");
 $adat1 = mysqli_fetch_assoc($query1);
-$query2 = mysqli_query($con,"SELECT * FROM felhasznalok WHERE email='$email'");
+$query2 = mysqli_query($kapcsolat, "SELECT * FROM felhasznalok WHERE email='$email'");
 $adat2 = mysqli_fetch_assoc($query2);
-$query3 = mysqli_query($con,"SELECT * FROM felhasznalok WHERE telefon='$telefon'");
+$query3 = mysqli_query($kapcsolat, "SELECT * FROM felhasznalok WHERE telefon='$telefon'");
 $adat3 = mysqli_fetch_assoc($query3);
 
 $letezik_email = $adat2["email"];
@@ -59,7 +56,7 @@ if($nev == ""){
 						if($letezik_nev == ""){
 							if($letezik_email == ""){
 								
-								mysqli_query($con,"INSERT INTO felhasznalok (nev, password, email, telefon)
+								mysqli_query($kapcsolat, "INSERT INTO felhasznalok (nev, password, email, telefon)
 									VALUES ('$nev', '$jelszo1', '$email', '$telefon')");
 								print "<script language='javascript'>alert('Mostmar be tud jelentkezni!');</script>";
 								header('Location: bejelentkezes.php');

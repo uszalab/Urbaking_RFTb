@@ -1,14 +1,11 @@
 <?php
 session_start();
 error_reporting(0); 
-require_once "db.php"; 
-$con=connect("root","");
-mysqli_select_db($con, "nimrod");
-
+include "main.php"; 
 $nev = $_SESSION["nev"];
 $jelszo = $_SESSION["jelszo"];
 
-$query = mysqli_query($con,"SELECT * FROM felhasznalok WHERE nev ='$nev'");
+$query = mysqli_query($kapcsolat, "SELECT * FROM felhasznalok WHERE nev ='$nev'");
 $adat = mysqli_fetch_assoc($query);
 $letezik_nev = $adat["nev"];
 $letezik_jelszo = $adat["jelszo"];
