@@ -1,3 +1,6 @@
+<?php
+include "main.php";
+?>
 <html>
 <head>
 	<meta charset="UTF-8">
@@ -7,7 +10,7 @@
 </head>
 <body>
 <div id="fejlec">
- <h1>Regisztráció!</h1>
+ <h2>Regisztráció!</h2>
 </div>
 
 <div id="regisztracio">

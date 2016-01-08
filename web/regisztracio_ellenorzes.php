@@ -3,16 +3,21 @@ session_start();
 
 include "main.php"; 
 
-$query = mysqli_query($kapcsolat, "SELECT * FROM felhasznalok");
-$adat = mysqli_fetch_assoc($query);
+// Mindenek előtt: jó a captcha?
+if (!(strtolower($_POST["captcha_code"]) == $_SESSION["captcha"]))
+   {
+// Képkód kiiktatva, debug célból
+//die ("<h2>Hiba</h2><br>Hibás képkód!");
+}
 
-$nev = $_SESSION["nev"];
-$jelszo1 = $_SESSION["jelszo1"];
-$jelszo2 = $_SESSION["jelszo2"];
-$email = $_SESSION["email"];
-$telefon = $_SESSION["telefon"];
+// Adatok beolvasása
+$nev = $_POST["nev"];
+$jelszo1 = $_POST["jelszo1"];
+$jelszo2 = $_POST["jelszo2"];
+$email = $_POST["email"];
+$telefon = $_POST["telefon"];
 
-//email hitelesítése
+//email hitelesítése (így insecure, de ígymarad)
 $szetszed = explode("@", $email);
 $valos_email = $szetszed[1];
 
@@ -28,52 +33,35 @@ $letezik_nev = $adat1["nev"];
 $letezik_telefon = $adat3["telefon"];
 
 //ha a felhasználónév, email és jelszó megfelel akkor sikerült a regisztráció
-if($nev == ""){
-    print "<script language='javascript'>alert('A név nem lehet üres');</script>";
-    print '<meta http-equiv="refresh" content="0; URL=regisztracio.php">';
+if($nev == "")
+{
+die ("<h2>Hiba</h2><br>A név nem lehet üres!");
+}
+		if(($jelszo2 == "") || ($jelszo1 = ""))
+{
+die ("<h2>Hiba</h2><br>A jelszó nem lehet üres!");
+		}
 
-}else{
-	if($jelszo1 == ""){
-       print "<script language='javascript'>alert('A jelszó nem lehet üres');</script>";
-       print '<meta http-equiv="refresh" content="0; URL=regisztracio.php">';
-	}else{
-		if($jelszo2 == ""){
-			print  "<script language='javascript'>alert('A jelszó nem lehet üres');</script>";
-            print '<meta http-equiv="refresh" content="0; URL=regisztracio.php">';
-		}else{
-			if($email == ""){
-				 print "<script language='javascript'>alert('Az email nem lehet üres');</script>";
-                 print '<meta http-equiv="refresh" content="0; URL=regisztracio.php">';
-			}else{
-				if($jelszo1 !== $jelszo2){
-					 print "<script language='javascript'>alert('A két jelszó nem egyezik');</script>";
-                     print '<meta http-equiv="refresh" content="0; URL=regisztracio.php">';
-				}else{
+			if($email == "")
+{
+die ("<h2>Hiba</h2><br>Az email nem lehet üres!");
+			}
+
+				if($jelszo1 !== $jelszo2)
+{
+die ("<h2>Hiba</h2><br>A két jelszónak egyeznie kell!");
+				}
+
 					if($valos_email == ""){
-						print "<script language='javascript'>alert('Érvénytelen e-mail!');</script>";
-                        print '<meta http-equiv="refresh" content="0; URL=regisztracio.php">';
-					}else{
+die ("<h2>Hiba</h2><br>Valós e-mail címet lehet csak beírni!");
+					}
+
 						if($letezik_nev == ""){
-							if($letezik_email == ""){
-								
-								mysqli_query($kapcsolat, "INSERT INTO felhasznalok (nev, password, email, telefon)
-									VALUES ('$nev', '$jelszo1', '$email', '$telefon')");
+mysqli_query($kapcsolat, "INSERT INTO felhasznalok (id, nev, jelszo, email, telefon) VALUES ('', '$nev', '$jelszo1', '$email', '$telefon')");
 								print "<script language='javascript'>alert('Mostmar be tud jelentkezni!');</script>";
-								header('Location: bejelentkezes.php');
-                                
-								
-							}else{
-								print "<script language='javascript'>alert('Ez az e-mail cim már hasznalatban van vagy hibas a megadott ellenorzo kod!');</script>";
-                                print '<meta http-equiv="refresh" content="0; URL=regisztracio.php">';
-							}
+                          
 						}else{
                             print "<script language='javascript'>alert('Ez a felhasználónév már foglalt!');</script>";
                             print '<meta http-equiv="refresh" content="0; URL=regisztracio.php">';
 						}
-					}
-				}
-			}
-		}
-	}
-}
 ?>
