@@ -2,6 +2,7 @@
 Csoport neve: RFT "B"
 Feladat címe: InformatikaiWebshop 
 Csoport tagok:
+
 Almádi Péter <dj.peat@gmail.com>
 Balogi Nimród <bnimrod16@gmail.com>
 Urbanics Balázs <uszalab@gmail.com>
@@ -14,10 +15,14 @@ A bejelentkezési oldal capcha-val legyen védve a robotoktól.
 Ha nincs még login neve és jelszava a felhasználónak (nincs regisztrálva), akkor lehessen regisztrálni. 
 
 Goldman István
-Táblákhoz adatok felvitele és törlése
+Az adatbázisban letező táblákhoz adatok felvitele az oldalon keresztül
+és a már meglévő adatok törlése egyesével vagy az egész adatbázist 
+egyszerre az oldalról.
 
 Almádi Péter
-Táblák létrehozása és modósítása
+Adatbázis modell elkészítése,adatbázis létrehozása táblákkal és mezőkkel. Későbbiekben már az adatbázisban
+létező adatok módosításának kidolgozása. 
 
 Urbanics Balázs
-Css fájlok és fájlok feltöltés
+Az oldal külsejének megtervezése és kivitelezése Css fájlok segítségével 
+és fájlok(képek,dokumentációk) feltöltés az oldalon keresztül.
