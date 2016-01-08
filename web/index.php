@@ -22,5 +22,5 @@ print "Kedves látogató! Az oldal regisztrációköteles, ezért kérlek kattints a re
 mysqli_close($kapcsolat);
 
 // Copyright
-print "Copyright &copy; 2015, Rft B csoport";
+print "<br><br>Copyright &copy; 2015, Rft B csoport";
 ?>

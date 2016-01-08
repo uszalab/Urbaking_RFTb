@@ -47,7 +47,7 @@ die ("<h2>Hiba</h2><br>A jelszó nem lehet üres!<br><br>Copyright &copy; 2015, 
 die ("<h2>Hiba</h2><br>Az email nem lehet üres!<br><br>Copyright &copy; 2015, Rft B csoport");
 			}
 
-				if($jelszo1 != $jelszo2)
+if ( $jelszo1 != $jelszo2 )
 {
 die ("<h2>Hiba</h2><br>A két jelszónak egyeznie kell!<br><br>Copyright &copy; 2015, Rft B csoport");
 				}

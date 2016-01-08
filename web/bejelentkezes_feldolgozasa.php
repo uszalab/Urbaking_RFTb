@@ -32,6 +32,8 @@ else if ($eredmeny >0)
 {
 // Beléptetjük
 $_SESSION["nev"] =$nev;
+// Átdobjuk a fõoldalra
+header ("Location: index.php");
 }
 
 ?>

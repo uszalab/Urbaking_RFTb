@@ -3,9 +3,9 @@
 if (bejelentkezve())
 {
 ?>
-<a href=""></a><br>
-<a href=""></a><br>
-<a href=""></a><br>
+<a href="termekek.php">Termékek, vásárlás</a><br>
+<a href="vasarlasok.php">Vásárlások, rendelések</a><br>
+<a href="felhasznalokezelo.php">Felhasználó kezelõ</a><br>
 <a href="kilepes.php">Kijelentkezés</a><br>
 <?php
 }
