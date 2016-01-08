@@ -4,6 +4,10 @@
 
 // Konfig behívása
 include "config.php";
+
+// Egyéb kellõ funkciók
+include "funkciok.php";
+
 // Db kapcsolat felépítése
 $kapcsolat =mysqli_connect($sqlhost, $sqluser, $sqlpass, $sqldb);
 // Siker?

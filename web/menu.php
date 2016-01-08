@@ -1,6 +1,6 @@
 <a href="index.php">Fõoldal</a><br>
 <?php
-if (!true)
+if (bejelentkezve())
 {
 ?>
 <a href=""></a><br>
