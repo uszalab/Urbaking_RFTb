@@ -1,7 +1,10 @@
+<?php
+include "main.php";
+?>
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>webapi</title>
+	<title>Belepes</title>
     <link rel="stylesheet" type="text/css" href="kinezet.css"/>
 </head>
 
@@ -12,7 +15,7 @@
 
 </div>
 <div id="regisztracio">
-<form method="post" action="chp2.php">
+<form method="post" action="bejelentkezes_feldolgozasa.php">
 <input type='hidden' name='elozo' value="login">
 <table id ="tabla" border="0" align="center" color="white"cellspacing="20">
     <tr>
