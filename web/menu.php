@@ -6,7 +6,7 @@ if (bejelentkezve())
 <a href=""></a><br>
 <a href=""></a><br>
 <a href=""></a><br>
-<a href=""></a><br>
+<a href="kilepes.php">Kijelentkezés</a><br>
 <?php
 }
 else
