@@ -7,7 +7,7 @@ include "main.php";
 if (!(strtolower($_POST["captcha_code"]) == $_SESSION["captcha"]))
    {
 // Képkód kiiktatva, debug célból
-//die ("<h2>Hiba</h2><br>Hibás képkód!");
+//die ("<h2>Hiba</h2><br>Hibás képkód!<br><br>Copyright &copy; 2015, Rft B csoport");
 }
 
 // Adatok beolvasása
@@ -35,25 +35,25 @@ $letezik_telefon = $adat3["telefon"];
 //ha a felhasználónév, email és jelszó megfelel akkor sikerült a regisztráció
 if($nev == "")
 {
-die ("<h2>Hiba</h2><br>A név nem lehet üres!");
+die ("<h2>Hiba</h2><br>A név nem lehet üres!<br><br>Copyright &copy; 2015, Rft B csoport");
 }
 		if(($jelszo2 == "") || ($jelszo1 = ""))
 {
-die ("<h2>Hiba</h2><br>A jelszó nem lehet üres!");
+die ("<h2>Hiba</h2><br>A jelszó nem lehet üres!<br><br>Copyright &copy; 2015, Rft B csoport");
 		}
 
 			if($email == "")
 {
-die ("<h2>Hiba</h2><br>Az email nem lehet üres!");
+die ("<h2>Hiba</h2><br>Az email nem lehet üres!<br><br>Copyright &copy; 2015, Rft B csoport");
 			}
 
-				if($jelszo1 !== $jelszo2)
+				if($jelszo1 != $jelszo2)
 {
-die ("<h2>Hiba</h2><br>A két jelszónak egyeznie kell!");
+die ("<h2>Hiba</h2><br>A két jelszónak egyeznie kell!<br><br>Copyright &copy; 2015, Rft B csoport");
 				}
 
 					if($valos_email == ""){
-die ("<h2>Hiba</h2><br>Valós e-mail címet lehet csak beírni!");
+die ("<h2>Hiba</h2><br>Valós e-mail címet lehet csak beírni!<br><br>Copyright &copy; 2015, Rft B csoport");
 					}
 
 						if($letezik_nev == ""){

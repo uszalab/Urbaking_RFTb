@@ -16,7 +16,7 @@ $jelszo = $_POST["jelszo"];
   if (strtolower($_POST["captcha_code"]) == $_SESSION["captcha"])
    {
 // Debug idejére megszüntetve
-//die ("<h2>Hiba</h2><br>Hibás a képkód!");
+//die ("<h2>Hiba</h2><br>Hibás a képkód!<br><br>Copyright &copy; 2015, Rft B csoport");
        }
 
 // Van ilyen felhasználó?
@@ -25,7 +25,7 @@ $keres =mysqli_query($kapcsolat, $lekerdezes);
 $eredmeny =mysqli_num_rows($keres);
 if ($eredmeny ==0)
 {
-die ("<h2>Hiba</h2><br>Nincs ilyen felhasználói név, és / jelszó!");
+die ("<h2>Hiba</h2><br>Nincs ilyen felhasználói név, és / jelszó!<br><br>Copyright &copy; 2015, Rft B csoport");
 }
 // menjünk azért biztosra
 else if ($eredmeny >0)

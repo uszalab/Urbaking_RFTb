@@ -50,5 +50,6 @@ include "main.php";
 </form>
 </div>
 <a href=bejelentkezes.php?d=5>Vissza</a>
+<br>Copyright &copy; 2015, Rft B csoport
 </body>
 </html>

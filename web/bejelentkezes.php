@@ -43,5 +43,6 @@ include "main.php";
 
 </form>
 </div>
+<br>Copyright &copy; 2015, Rft B csoport
 </body>
 </html>

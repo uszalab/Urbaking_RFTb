@@ -20,4 +20,7 @@ print "Kedves látogató! Az oldal regisztrációköteles, ezért kérlek kattints a re
 
 // A végén bezárjuk a kapcsolatot
 mysqli_close($kapcsolat);
+
+// Copyright
+print "Copyright &copy; 2015, Rft B csoport";
 ?>
