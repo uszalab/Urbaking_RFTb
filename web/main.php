@@ -20,4 +20,6 @@ if (mysqli_connect_errno($kapcsolat))
 // Jöhet az oldal tetejére a menü
 include "menu.php";
 
+print "<br><br><br>";
+
 ?>
