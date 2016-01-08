@@ -1,7 +1,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>webapi</title>
+	<title>Reg</title>
     <link href='https://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="kinezet.css"/>
 </head>
@@ -11,7 +11,7 @@
 </div>
 
 <div id="regisztracio">
-<form action="chp2.php" enctype="multipart/form-data" method="post">
+<form action="regisztracio_ellenorzes.php" enctype="multipart/form-data" method="post">
 <input type='hidden' name='elozo' value="regisztracio">
 <table id ="tabla" border="0" align="center" color="white"cellspacing="20">
     <tr>
